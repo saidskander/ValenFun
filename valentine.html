@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    .valentine-btn {
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px 10px;
+
+    }
+    #yes-btn {
+        background-color: #6ab04c;
+        color: white;
+    }
+    #no-btn {
+        background-color: #e74c3c;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <h1>Will You Be My Valentine?</h1>
+
+    <div>
+        <button id="no-btn" class="valentine-btn" onclick="makeBigger()">No</button>
+    </div>
+
+    <div>
+        <button id="yes-btn" class="valentine-btn" onclick="turnToGif()">Yes</button>
+    </div>
+
+    <script>
+        function makeBigger() {
+            var yesButton = document.getElementById('yes-btn');
+            var currentSize = parseFloat(window.getComputedStyle(yesButton, null).getPropertyValue('font-size'));
+            var newSize = currentSize * 1.2; // Increase font size by 20%
+            yesButton.style.fontSize = newSize + 'px';
+        }
+
+        function turnToGif() {
+            document.body.innerHTML = '<img src="valentine.gif" alt="Happy Valentine\'s Day">';
+        }
+    </script>
+</body>
+</html>
